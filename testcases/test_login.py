@@ -6,16 +6,11 @@ from airtest.core.api import connect_device
 
 from common.driver import App_key
 from common.logMethod import Testlog
+from common.read_data import read_yaml
 
-# print(d)    #[{'guest_btn': 'btn_guest'}]
-
-
-f=open(r"data/Loginpage.yaml",encoding="UTF-8",)     #../data/Loginpage.yaml
-d=yaml.safe_load(f)
-
-TP=App_key()
-log=Testlog(logname="印度03项目").Get_log()
-
+TP=App_key()#实例化App_key
+log=Testlog(logname="印度03项目").Get_log()#用例的日志输出
+d=read_yaml(file_path=r"data/Loginpage.yaml")#读取yaml的测试文件
 
 
 @pytest.mark.parametrize("data",d)
