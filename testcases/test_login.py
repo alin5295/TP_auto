@@ -1,4 +1,5 @@
 import os
+import time
 
 import pytest
 import yaml
@@ -18,8 +19,13 @@ def test_Login(data):
     TP.clear_app(package_name='com.szbt.tkpine.yy')
     TP.open_app('com.szbt.tkpine.yy')
     TP.poco_start()
-    TP.click(data["guest_btn"])
+    TP.find_element(data["guest_btn"]).click()
     log.info("游客登录成功")
-
+    time.sleep(3)
+    log.info("正在清理数据缓存，测试手机号登录")
+    TP.clear_app(package_name='com.szbt.tkpine.yy')
+    TP.open_app('com.szbt.tkpine.yy')
+    TP.poco_start()
+    TP.find_element(data["username_btn"]).click()
 
 
