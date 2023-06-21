@@ -6,7 +6,7 @@ import subprocess
 import pysnooper
 from poco.drivers.std import StdPoco
 from airtest.core.api import connect_device
-from common.logMethod import log
+from common.logMethod import log, Testlog
 
 # connect a device first, then initialize poco object
 # drvier = connect_device('Android:nz6tobmzmvs4c689')
@@ -14,6 +14,13 @@ from common.logMethod import log
 #
 # drvier.install_app(r'C:\Users\hkcmn5\Desktop\测试服\测试服-自动化包\TestTP_auto.apk')
 # drvier.start_app('com.szbt.tkpine.yy')
+
+
+
+# 设置日志等级，用于过滤掉airtest的日志
+# import logging
+# logger = logging.getLogger("airtest")
+# logger.setLevel(logging.ERROR)
 
 class App_key(object):
     '''
@@ -23,7 +30,6 @@ class App_key(object):
         '''
         :param device_name:设备名  【设备名通过adb devices获取】
         '''
-        self.logLevel=log.setLevel(logging.ERROR)
         self.driver = connect_device('Android:')
     # 获取设备信息
     def get_devices(self):

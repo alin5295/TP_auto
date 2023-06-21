@@ -1,11 +1,14 @@
 -
-  guest_btn: btn_guest       #游客登录
-  language_btn: btn_language #切换印地语需要长按 data["language_btn"].long_click()
-  username_btn: Image_15     #输入手机号
-  password_btn: Image_16     #输入OTP
-  otp_btn: btn_getcode       #获取OTP
-  phonelogin_btn: btn_phone  #手机号登录
-  people_btn: btn_server     #客户按钮
+  guest: btn_guest
+  language: btn_language
+  username: Image_15
+  password: Image_16
+  getotp: btn_getcode
+  phonelogin: btn_phone
+  server: btn_server
+
+
+
   1_btn: Button_1
   2_btn: Button_2
   3_btn: Button_3
